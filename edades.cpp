@@ -19,4 +19,5 @@ main(){
 	printf("El promedio es de %f \n",prom);
 	printf("El porcentaje de menores de edad es de: %f \n",porc);
 	//printf("La edad maxima es: %d",max);
+	
 }
