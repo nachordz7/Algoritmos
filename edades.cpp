@@ -1,23 +1,56 @@
-/* Realizar un programa que lea 10 edades y muestre el promedio entre todas las edades, el porcentaje de menores de edad y la edad maxima 
+/* 
+Ingresan 5 pasajeros a un micro, se lee el el destino:
+1-Pinamar
+2-Villa Gesell
+3-Mar del plata
+
+Junto con la edad de cada pasajero.
+Informar
+1-Porcentaje de mayores de edad
+2-Que porcentaje fue a mar del plata
+3-Promedio de edad de los que viajan a Gesell
+4-Edad minima y a que destino se dirige
 */
+
 #include<stdio.h>
-int i, n=10, edad, cont=0, acum, ;
-float prom, porc;
+int n=5, i;
+int destino, cont, edad, contM;
+float porcEdad, porcM;
 
 main(){
-	for(i=0; i<n ; i++){
+for(i=0; i<n ; i++){
+	printf("Ingrese destino %d (1-Pinamar 2-Villa Gesell 3-Mar del plata): ",i);
+	scanf("%d",&destino);
+	
 	printf("Ingrese edad %d: ",i);
-	scanf("%d2",&edad);	
-	acum= acum+ edad;
-	if (edad<18) {
-		cont = cont +1;
+	scanf("%d",&edad);
+	
+	if(edad>=18){
+		cont=cont+1;
+		porcEdad = (cont*100)/n;
+	}
+	
+
+}
+	if(destino == 1){
+
 		
 	}
-	}
-	porc = (cont*100)/n ;
-	prom = acum/n;
-	printf("El promedio es de %f \n",prom);
-	printf("El porcentaje de menores de edad es de: %f \n",porc);
-	//printf("La edad maxima es: %d",max);
 	
+	else if(destino == 2){
+		
+	}
+	
+	else if(destino == 3){
+		contM= contM +1;
+		porcM= (contM*100)/n;
+		
+	}
+	
+	printf("El porcentaje de mayores de edad: %f\n",porcEdad);
+	printf("Porcentaje de Mar del plata: %f\n",porcM);
+	/*
+	printf("Promedio de edad de los que viajan a Gesell");
+	printf("Edad minima y destino");
+*/
 }
