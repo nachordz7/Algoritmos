@@ -30,27 +30,27 @@ for(i=0; i<n ; i++){
 		porcEdad = (cont*100)/n;
 	}
 	
-
-}
 	if(destino == 1){
 
 		
 	}
-	
-	else if(destino == 2){
+	if(destino == 2){
+	acum= acum+edad;
+	gesell = gesell + 1;
 		
 	}
-	
-	else if(destino == 3){
-		contM= contM +1;
-		porcM= (contM*100)/n;
+	if(destino == 3){
+	contM= contM +1;
+	porcM= (contM*100)/n;	
 		
 	}
+}
+
 	
 	printf("El porcentaje de mayores de edad: %f\n",porcEdad);
-	printf("Porcentaje de Mar del plata: %f\n",porcM);
-	/*
-	printf("Promedio de edad de los que viajan a Gesell");
-	printf("Edad minima y destino");
+	printf("Porcentaje de Mar del plata: %f\n",porcM);	
+	printf("Promedio de edad de los que viajan a Gesell",);
+
+/*	printf("Edad minima y destino");
 */
 }
