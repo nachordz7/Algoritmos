@@ -1,4 +1,4 @@
-/*
+/* 
 Ingresan 5 pasajeros a un micro, se lee el el destino:
 1-Pinamar
 2-Villa Gesell
@@ -13,14 +13,44 @@ Informar
 */
 
 #include<stdio.h>
-int n=5;
-int i;
+int n=5, i;
+int destino, cont, edad, contM;
+float porcEdad, porcM;
 
 main(){
 for(i=0; i<n ; i++){
-	
-}
 	printf("Ingrese destino %d (1-Pinamar 2-Villa Gesell 3-Mar del plata): ",i);
-	scanf("%d",&n);
+	scanf("%d",&destino);
+	
+	printf("Ingrese edad %d: ",i);
+	scanf("%d",&edad);
+	
+	if(edad>=18){
+		cont=cont+1;
+		porcEdad = (cont*100)/n;
+	}
+	
+	if(destino == 1){
+
+		
+	}
+	if(destino == 2){
+	acum= acum+edad;
+	gesell = gesell + 1;
+		
+	}
+	if(destino == 3){
+	contM= contM +1;
+	porcM= (contM*100)/n;	
+		
+	}
 }
 
+	
+	printf("El porcentaje de mayores de edad: %f\n",porcEdad);
+	printf("Porcentaje de Mar del plata: %f\n",porcM);	
+	printf("Promedio de edad de los que viajan a Gesell",);
+
+/*	printf("Edad minima y destino");
+*/
+}
