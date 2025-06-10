@@ -21,7 +21,7 @@ main(){
 		}
 		acum= acum+guita;	
 			
-		if(edad>max){
+		if(i==0 || edad>max){
 			max= edad;
 			guitamax= guita;
 		}
