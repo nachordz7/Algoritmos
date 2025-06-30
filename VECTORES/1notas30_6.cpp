@@ -15,7 +15,9 @@ main() {
    printf("Ingrese nota para la posición %d: ",i);
    scanf("%d",&vector[i]);   
 } 
-
+   for(i=0;i<n;i++){
+  printf("%d", vector[i]);
+}
 
 
 }
