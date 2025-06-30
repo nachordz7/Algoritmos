@@ -7,3 +7,14 @@ Se almacenan en un vector las notas de 4 evaluaciónes de un estudiante.Mostrar:
 5. Nota maxima y posición de memoria. 
 El numero de nota corresponde a la posición de memoria
 */
+#include<stdio.h>
+
+
+main() {
+
+
+
+
+
+   
+}
