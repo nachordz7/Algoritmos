@@ -9,11 +9,12 @@ El numero de nota corresponde a la posición de memoria
 */
 #include<stdio.h>
 
-
+int vector[4], i, n=4;
 main() {
-
-
-
+   for(i=0;i<n;i++){
+   printf("Ingrese nota para la posición %d: ",i);
+   scanf("%d",&vector[i]);   
+} 
 
 
    
