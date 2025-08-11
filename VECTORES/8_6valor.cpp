@@ -48,7 +48,7 @@ main(){
 	printf("Promedio de los valores menores o iguales a 10: %d\n",prom2);
 	printf("Posiciones de memoria de los valores menores al promedio:\n");
 	for(i=0; i<n; i++){
-	if(vector[i] <10){	
+	if(vector[i] <prom2){	
 		printf("%d|",i);
 	}
 	}
