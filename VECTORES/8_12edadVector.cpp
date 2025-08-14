@@ -1,3 +1,10 @@
+/*
+Realizar un programa que almacene en un vector las edades de 10 personas. Mostrar:
+1) Porcentaje de menores de edad.
+2) Promedio de los mayores de edad.
+3) Posiciones de memoria de los mayores a 55.
+4) Edades mayores al promedio.
+*/
 #include<stdio.h>
 int i, n=10, vector[10], cont, acum, cont2;
 int prom;
@@ -34,4 +41,5 @@ main(){
 		}
 	}
 }
+
 
