@@ -16,9 +16,10 @@ main(){
 		printf("\nIngrese cantidad de asistencias del dia %d: ",i);
 		scanf("%d",&gente[i]);
 		
-		if(i==0 || gente[i]< min){
-			min = i;
+		if(i==0 || gente[i]< cant_min){
 			cant_min = gente[i];
+			min = i;
+			
 		}
 		acum = acum + gente[i];
 		
