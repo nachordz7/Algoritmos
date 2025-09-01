@@ -37,3 +37,4 @@ main(){
 	printf("Nota maxima: %d\tNumero de nota: %d\n",max,num_max);
 	printf("Nota minima entre los desaprobados: %d\n",min);
 }
+
