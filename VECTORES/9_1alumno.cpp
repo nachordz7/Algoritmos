@@ -32,9 +32,8 @@ main(){
 	porc= (cont*100)/n;
 	prom= acum/cont_desp;
 	
-	printf("\nPorcentaje de aprobadas: %f%%\n",porc);
-	printf("Promedio entre las desaprobadas: %d\n",prom);
-	printf("Nota maxima: %d\tNumero de nota: %d\n",max,num_max);
-	printf("Nota minima entre los desaprobados: %d\n",min);
+	printf("\n1. Porcentaje de aprobadas: %f%%\n",porc);
+	printf("2. Promedio entre las desaprobadas: %d\n",prom);
+	printf("3. Nota maxima: %d\tNumero de nota: %d\n",max,num_max);
+	printf("4. Nota minima entre los desaprobados: %d\n",min);
 }
-
