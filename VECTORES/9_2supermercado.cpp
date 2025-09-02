@@ -1,0 +1,7 @@
+/*
+Realizar un programa que imprima el ticket de un supermercado. 
+Se leen el precio y la cantidad de cada articulo.
+El usario indica si desa cargar otro producto.
+Imprimir el total a pagar. Por lo menos se lee un articulo.
+HACER CON DO WHILE
+*/
