@@ -10,7 +10,7 @@ int i, n=4, nota[4];
 int cont, acum, cont_desp, prom, max, num_max, min, num_min;
 float porc;
 main(){
-	for(i=0; i<n; i++){
+	do{
 		printf("Ingrese nota %d: ",i);
 		scanf("%d",&nota[i]);
 		
@@ -28,7 +28,8 @@ main(){
 			max= nota[i];
 			num_max = i;
 		}
-	}
+		i++;
+	} while (i<n);
 	porc= (cont*100)/n;
 	prom= acum/cont_desp;
 	
