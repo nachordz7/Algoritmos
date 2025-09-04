@@ -11,13 +11,15 @@ Rinde como maximo 5 estudiantes. Finaliza el programa al ingresar 0 como curso. 
 int main() {
     int curso, edad, nota, cont = 0;
     int min = 11; 
-    int edad_min, curso_min;
+    int edad_min, curso_min, mayor, acum, cont_men, prom;
+    float porc;
 
     printf("\nIndique curso 1 o 2 (0 para finalizar): ");
     scanf("%d", &curso);
 
     while (curso != 0 && cont < 5) {
-        printf("Ingrese la edad del alumno: ");
+        cont++;
+		printf("Ingrese la edad del alumno: ");
         scanf("%d", &edad);
 
         printf("Ingrese nota: ");
@@ -29,17 +31,29 @@ int main() {
             curso_min = curso;
         }
 
-        cont++;
-
+        if(edad>17){
+        	mayor++;
+		}
+		if(edad<18){
+			acum=acum+nota;
+			cont_men++;
+		}
+		
+		
         if (cont < 5) {
             printf("\nIndique curso 1 o 2 (0 para finalizar): ");
             scanf("%d", &curso);
         }
+        
     }
-
+	porc = (mayor*100)/cont;
+	prom = acum/cont_men;
     if (cont > 0) {
         printf("\nEdad del estudiante que tuvo la menor nota: %d\tCurso: %d\n", edad_min, curso_min);
+        printf("Porcentaje de estudiantes mayores de edad por curso: %f%%\n",porc);
+        printf("Nota promedio entre los menores de edad: %d\n",prom);
     } else {
         printf("\nNo se ingresaron estudiantes.\n");
     }
 }
+
