@@ -1,0 +1,14 @@
+/*
+Realizar un programa que lea las temperaturas leídas a lo largo de un dia y en que horario se leyeron. por lo menos se Lee 1 temperatura y el usuario indica el fin de la carga. Mostrar:
+1.Temperatura mínima y en que horario se leyó
+2.Promedio de las temperaturas tomadas a partir de las 16hs.Mostrar el maximo
+3. Que porcentaje de las temperaturas fueron tomadas antes del medio día. Calcular su promedio
+*/
+#include<stdio.h>
+int temp, hora
+
+main(){
+
+
+
+}
