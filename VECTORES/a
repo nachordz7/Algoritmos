@@ -5,10 +5,47 @@ Realizar un programa que lea las temperaturas leídas a lo largo de un dia y en 
 3. Que porcentaje de las temperaturas fueron tomadas antes del medio día. Calcular su promedio
 */
 #include<stdio.h>
-int temp, hora
+int temp, hora, rta;
+int min, hora_min;
+int cont, acum, prom, max;
 
 main(){
 
+do{
 
+printf("Ingrese temperatura: ");
+scanf ("%d",&temp);
+
+printf("Horario: ");
+scanf("%d",&hora);
+
+printf("Continuar 1(si) 0(no): ");
+scanf("%d",&rta);
+
+
+if(min == 0 || temp < min) {
+min = temp;
+hora_min = hora;
+
+}
+
+if(temp >= 1600){
+cont++;
+acum = acum + temp;
+
+if( max == 0 || temp > max) {
+max = temp;
+}
+
+
+}
+
+}while(rta==1);
+
+prom= acum/cont;
+
+printf("\nTemperatura mínima: %d \nHorario: %d\n", min, hora_min);
+
+printf("Promedio de las temperaturas tomadas a partir de las 16hs: %d \nTemperatura maxima: %d\n",prom, max);
 
 }
