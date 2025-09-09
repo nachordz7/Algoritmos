@@ -8,7 +8,7 @@ Por lo menos se Lee 1 temperatura y el usuario indica el fin de la carga. Mostra
 #include<stdio.h>
 int temp, hora, rta;
 int min, hora_min;
-int cont, acum, prom, max;
+int cont_16, acum_16, prom_16, max;
 int cont_12, acum_12, prom_12;
 float porc;
 main(){
@@ -23,16 +23,16 @@ scanf("%d",&hora);
 printf("Continuar 1(si) 0(no): ");
 scanf("%d",&rta);
 
-if(min == 0 || temp < min) {
+if(cont == 0 || temp < min) {
 	min = temp;
 	hora_min = hora;
 	
 	}
 	
 	if(hora > 1600){
-		cont++;
-		acum = acum + temp;
-		if( cont == 1 || temp > max) {
+		cont_16++;
+		acum_16 = acum_16 + temp;
+		if( cont_16 == 1 || temp > max) {
 			max = temp;
 	}
 	}
@@ -42,15 +42,15 @@ if(min == 0 || temp < min) {
 		acum_12= acum_12+temp;
 	}
 	
-	
+	cont++;
 }while(rta!=0);
 	 
-prom= acum/cont;
+prom_16= acum/cont;
 porc= (acum_12*100)/cont_12;
 prom_12= acum_12/cont_12;
 
 printf("\nTemperatura minima: %d \nHorario: %d\n", min, hora_min);
-printf("Promedio de las temperaturas tomadas a partir de las 16hs: %d \nTemperatura maxima: %d\n",prom, max);
+printf("Promedio de las temperaturas tomadas a partir de las 16hs: %d \nTemperatura maxima: %d\n",prom_16, max);
 printf("Porcentaje de las temperaturas fueron tomadas antes del medio dia: %f%% \nPromedio: %d",porc,prom_12);
 
 }
