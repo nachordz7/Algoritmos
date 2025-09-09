@@ -1,19 +1,20 @@
 /*
-Realizar un programa que lea las temperaturas leídas a lo largo de un dia y en que horario se leyeron. por lo menos se Lee 1 temperatura y el usuario indica el fin de la carga. Mostrar:
-1.Temperatura mínima y en que horario se leyó
+Realizar un programa que lea las temperaturas a lo largo de un dia y en que horario se leyeron. 
+Por lo menos se Lee 1 temperatura y el usuario indica el fin de la carga. Mostrar:
+1.Temperatura minima y en que horario se ingreso
 2.Promedio de las temperaturas tomadas a partir de las 16hs.Mostrar el maximo
-3. Que porcentaje de las temperaturas fueron tomadas antes del medio día. Calcular su promedio
+3. Que porcentaje de las temperaturas fueron tomadas antes del medio dia. Calcular su promedio
 */
 #include<stdio.h>
 int temp, hora, rta;
 int min, hora_min;
 int cont, acum, prom, max;
-
+int cont_12, acum_12, prom_12;
+float porc;
 main(){
-
 do{
 
-printf("Ingrese temperatura: ");
+printf("\nIngrese temperatura: ");
 scanf ("%d",&temp);
 
 printf("Horario: ");
@@ -22,30 +23,34 @@ scanf("%d",&hora);
 printf("Continuar 1(si) 0(no): ");
 scanf("%d",&rta);
 
-
 if(min == 0 || temp < min) {
-min = temp;
-hora_min = hora;
-
-}
-
-if(temp >= 1600){
-cont++;
-acum = acum + temp;
-
-if( max == 0 || temp > max) {
-max = temp;
-}
-
-
-}
-
-}while(rta==1);
-
+	min = temp;
+	hora_min = hora;
+	
+	}
+	
+	if(hora > 1600){
+		cont++;
+		acum = acum + temp;
+		if( cont == 1 || temp > max) {
+			max = temp;
+	}
+	}
+	
+	if(hora<1200){
+		cont_12++;
+		acum_12= acum_12+temp;
+	}
+	
+	
+}while(rta!=0);
+	 
 prom= acum/cont;
+porc= (acum_12*100)/cont_12;
+prom_12= acum_12/cont_12;
 
-printf("\nTemperatura mínima: %d \nHorario: %d\n", min, hora_min);
-
+printf("\nTemperatura minima: %d \nHorario: %d\n", min, hora_min);
 printf("Promedio de las temperaturas tomadas a partir de las 16hs: %d \nTemperatura maxima: %d\n",prom, max);
+printf("Porcentaje de las temperaturas fueron tomadas antes del medio dia: %f%% \nPromedio: %d",porc,prom_12);
 
 }
