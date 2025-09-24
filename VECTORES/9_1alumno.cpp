@@ -6,35 +6,45 @@ Realizar un programa que procese 4 notas de un alumno y muestre:
 4. Nota minima entre las aprobadas.
 */
 #include<stdio.h>
-int i, n=4, nota[4];
-int cont, acum, cont_desp, prom, max, num_max, min, num_min;
-float porc;
+int nota,i;
+int cont_aprob;
+int acum_desap, cont_desap;
+int max, num_nota;
+int min;
+float porc, prom;
 main(){
 	do{
-		printf("Ingrese nota %d: ",i);
-		scanf("%d",&nota[i]);
+		printf("Ingrese nota: ");
+		scanf("%d",&nota);
 		
-		if(nota[i]>5){
-			cont++;
-		}
-		if(nota[i]<6){
-			acum= acum+nota[i];
-			cont_desp++;
-			if(min==0 || nota[i]<min){
-				min= nota[i];
+		if(nota>5){
+			cont_aprob++;
+			if(min==0 || nota < min){
+				min= nota;
 			}
 		}
-		if(i==0 || nota[i]>max){
-			max= nota[i];
-			num_max = i;
+		else{
+			acum_desap= acum_desap + nota;
+			cont_desap++;
+		
 		}
+		
+		if(i==0 || nota > max ){
+			max = nota;
+			num_nota = i;
+		}
+		
 		i++;
-	} while (i<n);
-	porc= (cont*100)/n;
-	prom= acum/cont_desp;
+	}while(i<4);	
+	porc= (cont_aprob*100)/i;
 	
-	printf("\n1. Porcentaje de aprobadas: %f%%\n",porc);
-	printf("2. Promedio entre las desaprobadas: %d\n",prom);
-	printf("3. Nota maxima: %d\tNumero de nota: %d\n",max,num_max);
-	printf("4. Nota minima entre los desaprobados: %d\n",min);
+	printf("\nPorcentaje de aprobadas: %f%%\n",porc);
+	if(cont_desap>0){
+		prom= acum_desap/cont_desap;
+		printf("Promedio entre las desaprobadas: %f\n",prom);
+	}
+	else printf("No hay notas desaprobadas\n");
+	
+	printf("Nota maxima: %d \nNumero de nota: %d\n",max,num_nota);
+	printf("Nota minima entre los aprobados: %d",min);
 }
