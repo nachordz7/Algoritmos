@@ -9,30 +9,40 @@ Mostrar:
 #include<stdio.h>
 int notas[3][3], i, j, n = 3;
 int acum_est, acum;
+int diag;
 float prom_est, prom;
 main() {
 	for(i=0; i<n; i++){
+		acum_est=0;
 		printf("\n");
 		for(j=0; j<n; j++){
 			printf("Ingrese nota del estudiante %d de la prueba %d: ",i,j);
 			scanf("%d",&notas[i][j]);
 						
-			acum_est = acum_est + notas[i][j];
+			acum_est += notas[i][j];
+			acum += notas[i][j];
 		}
-		
+	
 	}
 	prom_est = acum_est/n;
-	
-	
 	for(i=0;i<n;i++){
 		printf("\n");
 		for(j=0;j<n;j++){
 			printf("%d |",notas[i][j]);
-		}
+		}	
 	}
 	
 	for(i=0; i<n; i++){
-		
-		printf("\nPromedio de nota del estudiante %d: %f\n",i,prom_est);
+		printf("\nPromedio de nota del estudiante %d: %f\n",i,prom_est);		
+	}
+	
+	printf("\nDiagonal principal:\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(i==j){
+			diag = notas[i][j];
+			printf("%d |",diag);
+			}
+		}
 	}
 	}
