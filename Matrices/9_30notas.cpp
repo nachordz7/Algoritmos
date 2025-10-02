@@ -19,7 +19,8 @@ main() {
 			printf("Ingrese nota del estudiante %d de la prueba %d: ",i,j);
 			scanf("%d",&notas[i][j]);
 			
-			acum_est += notas[i][j];			
+			acum_est += notas[i][j];	
+			acum += notas[i][j];		
 		}  
 		prom_est = acum_est/n;
 		printf("\nPromedio de nota del estudiante %d: %f\n",i,prom_est);
@@ -31,7 +32,17 @@ main() {
 			printf("%d |",notas[i][j]);
 		}	
 	}
-
+	
+	printf("\nPromedio por prueba:\n");
+	for(j=0;j<n;j++) {
+	acum = 0;
+    for(i=0;i<n;i++) {
+        acum += notas[i][j];  
+    }
+    prom= acum / n;
+    printf("\nProm de la prueba %d: %f\n",j,prom);
+	}
+	
 	printf("\nDiagonal principal:\n");
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
