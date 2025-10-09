@@ -15,6 +15,7 @@ int acum_dia, dia_max, max;
 float prom_dia;
 int diag;
 main(){
+	//1.
 	for(i=0; i<n; i++){
 		printf("\n");
 		acum = 0;
@@ -29,6 +30,7 @@ main(){
 		
 	}
 	
+	//2. 3.
 	for(j=0;j<n;j++){
 		acum_dia = 0;
 		for(i=0;i<n;i++){
@@ -49,6 +51,8 @@ main(){
  	
  	//5 Que semana se gasto menos
  	
+ 	
+ 	//6.
 	printf("Diagonal principal:\n");
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
