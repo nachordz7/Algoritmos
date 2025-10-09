@@ -13,6 +13,8 @@ int i, j,n=5, gasto[5][5];
 int acum;
 int acum_dia, dia_max, max;
 float prom_dia;
+int semana_max, semana_min;
+
 int diag;
 main(){
 	//1.
