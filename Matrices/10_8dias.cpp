@@ -11,7 +11,7 @@ Mostrar:
 #include<stdio.h>
 int i, j,n=5, gasto[5][5];
 int acum;
-int acum_dia, dia_mayor, mayor;
+int acum_dia, dia_max, max;
 float prom_dia;
 main(){
 	for(i=0; i<n; i++){
@@ -36,11 +36,11 @@ main(){
 		prom_dia = acum_dia/n;
 		printf("Gasto promedio por dia %d: %f\n",j,prom_dia);
 			
-		if(prom_dia > mayor){
-			dia_mayor= j;
-			mayor = prom_dia;
+		if(j==0 || prom_dia > max){
+			max = prom_dia;
+			dia_max= j;
 		}
 	}
-	printf("\nDia que se gasto mas en promedio: %d\n",dia_mayor);
+	printf("\nDia que se gasto mas en promedio: %d\n",dia_max);
 }
 
