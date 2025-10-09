@@ -1,0 +1,46 @@
+/*
+Se almacenan los gastos de una persona, durante 5 dias en 5 semanas 
+Mostrar:
+1. Total por semana.
+2. Promedio por dia.
+3. Que dia se gasto mas en promedio.
+4. Por semana que dia se gasto mas.
+5. Que semana se gasto menos.
+6. Diagonal principal.
+*/
+#include<stdio.h>
+int i, j,n=5, gasto[5][5];
+int acum;
+int acum_dia, dia_mayor, mayor;
+float prom_dia;
+main(){
+	for(i=0; i<n; i++){
+		printf("\n");
+		acum = 0;
+		
+		for(j=0; j<n; j++){
+			printf("Ingrese gasto de la semana %d, dia %d: ",i,j);
+			scanf("%d",&gasto[i][j]);
+			
+			acum = acum + gasto[i][j];
+		}
+		printf("\nGasto total de la semana %d: %d\n",i,acum);
+		
+	}
+	
+	for(j=0;j<n;j++){
+		acum_dia = 0;
+		for(i=0;i<n;i++){
+		acum_dia += gasto[i][j];
+		}
+		prom_dia = acum_dia/n;
+		printf("Gasto promedio por dia %d: %f\n",j,prom_dia);
+			
+		if(prom_dia > mayor){
+			dia_mayor= j;
+			mayor = prom_dia;
+		}
+	}
+	printf("\nDia que se gasto mas en promedio: %d\n",dia_mayor);
+}
+
