@@ -13,6 +13,7 @@ int i, j,n=5, gasto[5][5];
 int acum;
 int acum_dia, dia_max, max;
 float prom_dia;
+int diag;
 main(){
 	for(i=0; i<n; i++){
 		printf("\n");
@@ -42,5 +43,15 @@ main(){
 		}
 	}
 	printf("\nDia que se gasto mas en promedio: %d\n",dia_max);
+	
+	printf("Diagonal principal:\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(i==j){
+				diag = gasto[i][j];
+				printf("%d |",diag);
+			}
+		}
+	}
 }
 
