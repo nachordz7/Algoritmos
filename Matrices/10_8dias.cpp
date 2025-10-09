@@ -44,6 +44,11 @@ main(){
 	}
 	printf("\nDia que se gasto mas en promedio: %d\n",dia_max);
 	
+	//4 Por semana que dia se gasto mas
+ 	
+ 	
+ 	//5 Que semana se gasto menos
+ 	
 	printf("Diagonal principal:\n");
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
