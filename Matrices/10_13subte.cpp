@@ -9,19 +9,48 @@ Mostrar:
 #include<stdio.h>
 int matriz[3][3], i, j, n=3;
 int acum_est, max, est_max;
-float prom_est;
+int acum_dia, cont_dia;
+float prom_est, prom_dia, porc_dia;
 main(){
 	for(i=0;i<n;i++){
-		acum_est = 0;
-		printf("\n");
+
 		for(j=0;j<n;j++){
-			printf("Dia %d, Ingrese cantidad de pasajeros de la estacion %d: ",i,j);
+			printf("Ingrese cantidad de pasajeros de la estacion %d, Dia %d : ",i,j);
 			scanf("%d",&matriz[i][j]);
-			
+		}
+		printf("\n");
+	}
+	
+//1.
+	for(i=0;i<n;i++){
+		acum_est=0;
+		for(j=0;j<n;j++){
 			acum_est = acum_est + matriz[i][j];	
 		}
 		prom_est = acum_est/n;
-		printf("\nPromedio de personas de la estacion %d: %f\n",i,prom_est);
+		printf("Promedio de personas de la estacion %d: %f\n",i,prom_est);
 		
+		if(i==0 || prom_est > max){
+			max = prom_est;
+			est_max = i;
+		}
 	}
+	printf("\nEstacion con mas pasajeros: %d\n",est_max,max);
+	
+//2.
+	for(j=0;j<n;j++){
+		acum_dia=0;
+		for(i=0;i<n;i++){
+			acum_dia = acum_dia + matriz[i][j];
+		}
+		prom_dia = acum_dia/n;
+		printf("Promedio de pasajeros del dia %d: %f\n",j,prom_dia);
+		
+		if(acum_dia >300){
+			cont_dia++;
+		}
+		}
+		porc_dia = (cont_dia*100)/n;
+		printf("\nPorcentaje de dias que usaron el servicio mas de 300 personas: %f%%\n",porc_dia);
 	}
+	
