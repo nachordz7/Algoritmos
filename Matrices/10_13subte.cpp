@@ -10,6 +10,7 @@ Mostrar:
 int matriz[3][3], i, j, n=3;
 int acum_est, max, est_max;
 int acum_dia, cont_dia;
+int diag;
 float prom_est, prom_dia, porc_dia;
 main(){
 	for(i=0;i<n;i++){
@@ -52,5 +53,15 @@ main(){
 		}
 		porc_dia = (cont_dia*100)/n;
 		printf("\nPorcentaje de dias que usaron el servicio mas de 300 personas: %f%%\n",porc_dia);
-	}
 	
+	//3.
+	printf("Diagonal principal:\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(i==j){
+				diag = matriz[i][j];
+			}
+		}
+		printf("%d |",diag);
+	}
+	}
