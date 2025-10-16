@@ -10,11 +10,11 @@ Mostrar:
 int matriz[3][3], i, j, n=3;
 int acum_est, max, est_max;
 int acum_dia, cont_dia;
-int min, posc, diag;
+int min, pos_mini, pos_minj, posc, diag;
+int dia_max, conc, acum;
 float prom_est, prom_dia, porc_dia;
 main(){
 	for(i=0;i<n;i++){
-
 		for(j=0;j<n;j++){
 			printf("Ingrese cantidad de pasajeros de la estacion %d, Dia %d : ",i,j);
 			scanf("%d",&matriz[i][j]);
@@ -36,7 +36,7 @@ main(){
 			est_max = i;
 		}
 	}
-	printf("\nEstacion con mas pasajeros: %d\n",est_max,max);
+	printf("\nEstacion con mas pasajeros: %d\n",est_max);
 	
 //2.
 	for(j=0;j<n;j++){
@@ -54,8 +54,19 @@ main(){
 		porc_dia = (cont_dia*100)/n;
 		printf("\nPorcentaje de dias que usaron el servicio mas de 300 personas: %f%%\n",porc_dia);
 	
-	//3.
-	
+//3.
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(i==0 && j==0 || matriz[i][j] < min){
+				min = matriz[i][j];
+				pos_mini = i;
+				pos_minj = j;
+			}
+		}
+		
+	}
+	printf("Minimo valor de la matriz: %d\n",min);
+	printf("Posicion de memoria: %d %d\n",pos_mini, pos_minj);
 	printf("Diagonal principal:\n");
 	for(i=0;i<n;i++){
 		for(j=0;j<n;j++){
@@ -64,6 +75,18 @@ main(){
 			}
 		}
 		printf("%d |",diag);
+	}
+	
+//4.	
+	printf("\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			if(j==0 || matriz[i][j] > conc){
+				conc = matriz[i][j];
+				dia_max = j;
+			}
+		}
+		printf("Estacion: %d, dia mas concurrido: %d\n",i,dia_max);
 	}
 	}
 	
