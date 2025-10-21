@@ -7,25 +7,32 @@ Una aerolinea registra las personas que viajan a 3 destinos durante 3 dias. Most
 */
 #include <stdio.h>
 int pasa[3][3], i, j, N=3, acum=0;
+int max, pos_i, pos_j, traza, min, dia_min, minimo, desti_min;
 float prom;
 main(){
 	//CARGA
 	for(i=0; i<N; i++){
 		for(j=0; j<N; j++){
-			printf("Ingrese pasajeros al destino %d en el dia %d ", i,j);
+			printf("Ingrese pasajeros al destino %d en el dia %d: ", i,j);
 			scanf("%d", &pasa[i][j]);
 		}
+		printf("\n");
 	}
 	// 1.personas por destino (filas)
 	for(i=0; i<N; i++){
 		for(j=0; j<N; j++){
 			acum=acum+pasa[i][j];
+			
+			if((j==0)|| pasa[i][j]<minimo ){
+				minimo=pasa[i][j];
+				desti_min=j;
+			}
 		}
 		printf("Total de personas del destino %d es %d \n", i, acum);
-		acum=0;
-		
+		acum=0;	
 	}
-
+	printf("Destino con menos visitantes: %d\n",desti_min);
+	
     // 2.promedio por dia (columnas)
 	for(j=0; j<N; j++){
 		for(i=0; i<N; i++){
@@ -45,12 +52,12 @@ main(){
 				pos_j=j;
 			}
 			if(i==j){
-				traza=taza+pasa[i][j];
+				traza=traza+pasa[i][j];
 			}
 		}		
 	}
 	printf("El maximo es y se encuenta en %d i= %d j= %d \n", max, pos_i, pos_j);
-	printf("La traza es %d", traza);
+	printf("La traza es %d\n", traza);
 	
 	for(j=0; j<N; j++){
 		for(i=0; i<N; i++){
