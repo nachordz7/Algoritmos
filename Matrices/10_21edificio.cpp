@@ -79,8 +79,16 @@ main(){
 		}
 		if(acum > 4000){
 		cont++;
-		}
+			}
 	}
 	porc= (cont*100)/n;
 	printf("Pisos que consumieron mas de 4k(Porcentaje): %f%%\n",porc);
+	
+	printf("Matriz:\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			printf("%d |",matriz[i][j]);
+		}
+		printf("\n");
+	}
 }
