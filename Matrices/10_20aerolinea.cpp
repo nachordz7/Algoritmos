@@ -1,73 +1,54 @@
 /*
-Una aerolinea registra las personas que viajan a 3 destinos durante 3 dias. Mostrar:
-1. total de personas por destino y que destino tuvo menos visitantes. 
-2. Promedio de pasajeros por dia y cuantos dias volaron mas de 500 personas. (expresar en porcentaje). 
-3. Maximo valor de la matriz, posicion de la memoria y traza. 
-4. En cada dia mostrar que destino fue menos concurrido. 
+Un edificio cuenta con 4 pisos con 4 departamentos cada uno. Se registra el consumo electrico de cada departamento y se desa saber:
+1.Promedio de consumo por piso y que piso consumio mas.
+2.Total de consumo por numero de departamento. Mostrar a que piso pertenece el departamento que gasto menos(por numero de departamento).
+3.Maximo valor de la matriz, sus posiciones de memoria y traza
+4.Cuantos pisos consumieron mas de 4k. Expresar en porcentaje.
 */
-#include <stdio.h>
-int pasa[3][3], i, j, N=3, acum=0;
-int max, pos_i, pos_j, traza, min, dia_min, minimo, desti_min;
+#include<stdio.h>
+int matriz[4][4], n=4, i, j;
+int acum;
+int max, piso_max;
+int acum_depa, min, depa_min, piso_min;
 float prom;
 main(){
-	//CARGA
-	for(i=0; i<N; i++){
-		for(j=0; j<N; j++){
-			printf("Ingrese pasajeros al destino %d en el dia %d: ", i,j);
-			scanf("%d", &pasa[i][j]);
+	for(i=0;i<n;i++){
+		for(j=0;j<n;j++){
+			printf("Ingrese consumo electrico del piso %d, departamento %d: ",i,j);
+			scanf("%d",&matriz[i][j]);
 		}
 		printf("\n");
 	}
-	// 1.personas por destino (filas)
-	for(i=0; i<N; i++){
-		for(j=0; j<N; j++){
-			acum=acum+pasa[i][j];
-			
-			if((j==0)|| pasa[i][j]<minimo ){
-				minimo=pasa[i][j];
-				desti_min=j;
-			}
-		}
-		printf("Total de personas del destino %d es %d \n", i, acum);
-		acum=0;	
-	}
-	printf("Destino con menos visitantes: %d\n",desti_min);
 	
-    // 2.promedio por dia (columnas)
-	for(j=0; j<N; j++){
-		for(i=0; i<N; i++){
-			acum=acum+pasa[i][j];
-		}
-		prom=acum/N;
-		printf("El promedio de personas del dia %d es %f \n", j, prom);
+	//1. 
+	for(i=0;i<n;i++){
 		acum=0;
-		
+		for(j=0;j<n;j++){
+			acum += matriz[i][j];
+			
+			if( i == 0 && j == 0 || matriz[i][j] > max){
+				max = matriz[i][j];
+				piso_max = i;
+			} 
+		}
+		prom = acum/n;
+		printf("Promedio de consumo del piso %d: %f\n",i,prom);	
 	}
+	printf("Piso que consumio mas: %d\n",piso_max);
 	
-	for(i=0; i<N; i++){
-		for(j=0; j<N; j++){
-			if( (i==0 && j==0)|| pasa[i][j]>max ){
-				max=pasa[i][j];
-				pos_i=i;
-				pos_j=j;
+	//2.
+	for(j=0;j<n;j++){
+		acum_depa=0;
+		for(i=0;i<n;i++){
+			acum_depa += matriz[i][j];
+			
+			if(i == 0 && j == 0  || matriz[i][j] < min){
+				min = matriz[i][j];
+				depa_min = j;
+				piso_min = i;
 			}
-			if(i==j){
-				traza=traza+pasa[i][j];
-			}
-		}		
+		}
+		printf("Total de consumo del departamento %d: %d\n",j,acum_depa);
 	}
-	printf("El maximo es y se encuenta en %d i= %d j= %d \n", max, pos_i, pos_j);
-	printf("La traza es %d\n", traza);
-	
-	for(j=0; j<N; j++){
-		for(i=0; i<N; i++){
-			if((i==0)|| pasa[i][j]<min ){
-				min=pasa[i][j];
-				dia_min=i;
-			}
-		}		
-		printf("El dia %d hubo menos pasajeros\n",dia_min);
-	
-	}
-	
+	printf("Departamento que gasto menos: %d \nPiso: %d",depa_min,piso_min);
 }
